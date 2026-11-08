@@ -134,13 +134,6 @@ pooing/
 ├── app/              # PWA: capture → onnxruntime-web → result card
 └── tests/
 ```
-
-## Contributing
-
-저의 레포지토리에 관심을 가져주셔서 감사합니다. 하지만 아직은 개인 텀 프로젝트이므로, 기여는 받지 않고 solo로 작업할 예정입니다.
-
-Thank you for your interest in this repository. As this is currently a personal term project, I am working on it solo and not accepting contributions.
-
 ## License
 
 - Code: Apache-2.0
