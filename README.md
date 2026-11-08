@@ -69,15 +69,21 @@ If confidence is below a calibrated threshold, `bsfs.type` is `null` and only th
 
 ## Data
 
-There is no publicly downloadable, BSFS-labeled human stool image dataset. POOING therefore uses:
+> **Data status (November 2026):** No real human stool images have been obtained yet. We are seeking access to the academic datasets listed below, starting with Zhou et al. (2021). Until access is granted, all training and evaluation use only the synthetic clay dataset, and no performance on real photos is claimed.
+>
+> **데이터 현황 (2026년 11월):** 아직 실제 사람의 대변 이미지는 확보하지 못했습니다. 아래 학술 데이터셋의 접근 권한을 요청·탐색하고 있으며, Zhou et al.(2021)부터 진행합니다. 접근이 허가되기 전까지 학습과 평가는 합성 점토 데이터만으로 하며, 실제 사진에서의 성능은 주장하지 않습니다.
 
-| Source | Size | Use |
-| --- | --- | --- |
-| **Synthetic clay dataset** (built for this project) | 2,000–3,000 images (target) | Primary training; will be released under CC BY 4.0 |
-| Negative/background photos (empty bowl, paper, urine) | 300–500 images | Quality gate training |
-| Academic datasets (Zhou et al. 2021, Zhang et al. 2022) | 1,118–3,275 images | Fine-tuning and real-domain evaluation, **only if access is granted; never redistributed** |
+As of November 2026, there is no publicly downloadable, BSFS-labeled human stool image dataset. POOING therefore plans to use:
 
-The synthetic dataset follows the approach of Hachuel et al. (play-doh stool models). The domain gap between synthetic and real images is reduced with **AdaBN** (re-estimating BatchNorm statistics on unlabeled real photos) and measured explicitly in the evaluation.
+| Source | Size | Use | Status |
+| --- | --- | --- | --- |
+| **Synthetic clay dataset** (built for this project) | 2,000–3,000 images (target) | Primary training; will be released under CC BY 4.0 | Planned |
+| Negative/background photos (empty bowl, paper, urine) | 300–500 images (target) | Quality gate training | Planned |
+| Zhou et al. 2021 (Duke smart toilet) | 3,275 images, BSFS 1–7 | Real-domain evaluation; fine-tuning only if permitted; **never redistributed** | Not obtained — access being sought |
+| Zhang et al. 2022 | 1,007 images, BSFS 1–7 | Same as above | Not obtained — access to be sought |
+| Lee et al. 2025 (DLSUC) | 3,208 smartphone images; UC activity labels, not BSFS | Unlabeled real-domain photos only (e.g., AdaBN statistics) | Not obtained — access to be sought |
+
+The synthetic dataset follows the approach of Hachuel et al. (play-doh stool models). The domain gap between synthetic and real images is reduced with **AdaBN** (re-estimating BatchNorm statistics on unlabeled real photos) and will be measured explicitly once real-image access is granted.
 
 ## Evaluation
 
